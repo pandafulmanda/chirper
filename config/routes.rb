@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :chirps
+
   get 'home/index'
 
   root to: 'home#index'
