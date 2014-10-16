@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'chirps/index'
+
+  get 'chirps/new'
+
+  get 'chirps/edit'
+
+  get 'chirps/show'
+
   resources :chirps
 
   get 'home/index'
