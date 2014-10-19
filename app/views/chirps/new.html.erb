@@ -1,2 +1,19 @@
-<h1>Chirps#new</h1>
-<p>Find me in app/views/chirps/new.html.erb</p>
+<h1>Make a Chirp!</h1>
+
+<%= form_for @chirp do |f| %>
+
+  <div>
+    <%= f.label :author %>
+    <%= f.text_field :author %>
+  </div>
+
+  <div>
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+  </div>
+
+  <div>
+    <%= f.submit 'Chirp!' %>
+  </div>
+
+<% end %>

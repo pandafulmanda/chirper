@@ -4,6 +4,7 @@ class ChirpsController < ApplicationController
   end
 
   def new
+    @chirp = Chirp.new
   end
 
   def edit
@@ -12,4 +13,12 @@ class ChirpsController < ApplicationController
   def show
     @chirp = Chirp.find(params[:id])
   end
+
+  def create
+    @chirp = Chirp.new(params[:chirp].permit(:author, :body))
+    if @chirp.save
+      redirect_to chirp_path(@chirp)
+    end
+  end
+
 end
