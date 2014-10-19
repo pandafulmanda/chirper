@@ -10,5 +10,6 @@ class ChirpsController < ApplicationController
   end
 
   def show
+    @chirp = Chirp.find(params[:id])
   end
 end
