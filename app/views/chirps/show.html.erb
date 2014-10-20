@@ -3,4 +3,5 @@
 <p>
 - <i><%= @chirp.author %></i>
 </p>
+<%= link_to "Edit this Chirp", edit_chirp_path(@chirp), action: 'edit' %>
 <%= link_to "See All Chirps", chirps_path %>
