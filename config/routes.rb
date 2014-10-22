@@ -9,6 +9,10 @@ Rails.application.routes.draw do
 
   resources :chirps
 
+  scope ':author' do
+    resources :chirps, except: ['create', 'update', 'destroy']
+  end
+
   get 'home/index'
 
   root to: 'home#index'
