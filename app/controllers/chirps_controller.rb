@@ -8,11 +8,11 @@ class ChirpsController < ApplicationController
   end
 
   def edit
-    @chirp = Chirp.find(params[:id])
+    @chirp = Chirp.find_by(params.permit(:author, :id))
   end
 
   def show
-    @chirp = Chirp.find(params[:id])
+    @chirp = Chirp.find_by(params.permit(:author, :id))
   end
 
   def create
