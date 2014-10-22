@@ -2,7 +2,7 @@
 <% @chirps.each do |chirp| %>
   <p><%= chirp.body %></p>
   <p>
-    - <i><%= chirp.author %></i>
+    - <i><%= link_to chirp.author, author_chirps_path(chirp.author) %></i>
   </p>
   <%= link_to "Read more", chirp_path(chirp) %>
 <% end -%>

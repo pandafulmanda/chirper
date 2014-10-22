@@ -4,7 +4,7 @@ class ChirpsController < ApplicationController
   end
 
   def new
-    @chirp = Chirp.new
+    @chirp = Chirp.new(params.permit(:author))
   end
 
   def edit

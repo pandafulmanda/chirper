@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :chirps
 
-  scope ':author' do
+  scope ':author', as: 'author' do
     resources :chirps, except: ['create', 'update', 'destroy']
   end
 
