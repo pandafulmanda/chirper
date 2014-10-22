@@ -1,6 +1,6 @@
 class ChirpsController < ApplicationController
   def index
-    @chirps = Chirp.all
+    @chirps = Chirp.where(params.permit(:author))
   end
 
   def new
