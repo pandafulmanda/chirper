@@ -1,6 +1,7 @@
 <h1>All Chirps</h1>
 <% @chirps.each do |chirp| %>
   <p><%= chirp.body %></p>
+  <p><%= image_tag chirp.pic.url, width: '100' %></p>
   <p>
     - <i><%= link_to chirp.author, author_chirps_path(chirp.author) %></i>
   </p>

@@ -16,7 +16,7 @@ class ChirpsController < ApplicationController
   end
 
   def create
-    @chirp = Chirp.new(params[:chirp].permit(:author, :body))
+    @chirp = Chirp.new(params[:chirp].permit(:author, :body, :pic))
     if @chirp.save
       redirect_to chirp_path(@chirp)
     else
@@ -27,7 +27,7 @@ class ChirpsController < ApplicationController
   def update
     @chirp = Chirp.find(params[:id])
    
-    if @chirp.update(params[:chirp].permit(:author, :body))
+    if @chirp.update(params[:chirp].permit(:author, :body, :pic))
       redirect_to chirp_path(@chirp)
     else
       render 'edit'
